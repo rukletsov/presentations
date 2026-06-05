@@ -27,21 +27,23 @@
   <div class="slides">
 
 
-  <!-- Title + Goals (vertical stack) -->
+  <!-- Title -->
   <section>
+    <h1>CI triaging with xmemory</h1>
+    <br>
+    <p>
+      Alex Rukletsov
+      <br>
+      <small>Red Hat Engineering</small>
+    </p>
+    <img src="assets/redhat-shadowman.svg" alt="Red Hat" style="height: 3em;" />
+    <br>
+    <p><small>ACS Hackathon, June 2026</small></p>
+  </section>
 
-    <section>
-      <h1>CI triaging with xmemory</h1>
-      <br>
-      <p>
-        Alex Rukletsov
-        <br>
-        <small>Red Hat Engineering</small>
-      </p>
-      <img src="assets/redhat-shadowman.svg" alt="Red Hat" style="height: 3em;" />
-      <br>
-      <p><small>ACS Hackathon, June 2026</small></p>
-    </section>
+
+  <!-- Goals + Options (vertical stack) -->
+  <section>
 
     <section>
       <h2>The plan was simple...</h2>
@@ -59,6 +61,89 @@
       </ul>
     </section>
 
+    <section style="font-size: 0.8em;">
+      <h2>Rounding up the usual suspects</h2>
+      <ul>
+        <li><strong>CrewAI</strong> — open source, persistence looks fine but limited to agent interaction and ongoing state</li>
+        <li><strong>DuckDB</strong> — in-process SQL database, but we own defining and maintaining the schema</li>
+        <li><strong>Beads</strong> — good for learnings but lacks flexibility w.r.t. schema</li>
+        <li><strong>xmemory</strong> — defines and maintains schema from interactions, maps text to structured data; closed source, service only</li>
+      </ul>
+      <p class="fragment" data-fragment-index="0" style="margin-top: 0.5em; font-size: 1.2em; color: var(--sol-blue); font-weight: bold;">&#8594; went with xmemory</p>
+    </section>
+
+    <section>
+      <h2>The stranger rides into town</h2>
+      <ul>
+        <li>Schema-based memory layer for AI agents (MCP server)</li>
+        <li>Agents read/write in natural language, xmemory extracts typed, validated, structured data</li>
+        <li>Schema auto-generated and evolved from interactions</li>
+        <li>97% memory quality on benchmarks (vs. ~87% Mem0, ~86% Cognee)</li>
+      </ul>
+    </section>
+
+  </section>
+
+
+  <!-- The Good -->
+  <section>
+
+    <section>
+      <img class="r-stretch" src="assets/the-good.jpg" />
+    </section>
+
+    <section>
+      <h2>Avoid duplicate work — same failure</h2>
+    </section>
+
+    <section>
+      <img class="r-stretch" src="assets/same-failure1.png" />
+    </section>
+
+    <section>
+      <img class="r-stretch" src="assets/same-failure2.png" />
+    </section>
+
+    <section>
+      <img class="r-stretch" src="assets/same-failure3.png" />
+    </section>
+
+    <section>
+      <h2>Bootstrap future investigations through learned patterns — same problem</h2>
+    </section>
+
+    <section>
+      <img class="r-stretch" src="assets/new-failure-old-flake1.png" />
+    </section>
+
+    <section>
+      <img class="r-stretch" src="assets/new-failure-old-flake2.png" />
+    </section>
+
+    <section>
+      <h2>Aggregate findings without relying on Jira</h2>
+    </section>
+
+    <section>
+      <img class="r-stretch" src="assets/learnings.png" />
+    </section>
+
+    <section>
+      <h2>Facilitate agent comms</h2>
+      <br>
+      <p class="fragment" style="font-size: 1em; color: var(--sol-orange); font-style: italic;">(this bounty remains unclaimed)</p>
+    </section>
+
+  </section>
+
+
+  <!-- The Bad -->
+  <section>
+
+    <section>
+      <img class="r-stretch" src="assets/the-bad.jpg" />
+    </section>
+
   </section>
 
 
@@ -69,6 +154,7 @@
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/zoom/zoom.js"></script>
 
   <script>
     Reveal.initialize({
@@ -78,7 +164,7 @@
       center: true,
       transition: 'slide',
 
-      plugins: [RevealNotes, RevealMarkdown, RevealHighlight]
+      plugins: [RevealNotes, RevealMarkdown, RevealHighlight, RevealZoom]
     });
   </script>
 

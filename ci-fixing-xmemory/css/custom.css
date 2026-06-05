@@ -1,1 +1,115 @@
-/* Custom styles for the presentation */
+:root {
+  /* Solarized Light palette */
+  --sol-base03:  #002b36;
+  --sol-base02:  #073642;
+  --sol-base01:  #586e75;
+  --sol-base00:  #657b83;
+  --sol-base0:   #839496;
+  --sol-base1:   #93a1a1;
+  --sol-base2:   #eee8d5;
+  --sol-base3:   #fdf6e3;
+
+  --sol-yellow:  #b58900;
+  --sol-orange:  #cb4b16;
+  --sol-red:     #dc322f;
+  --sol-magenta: #d33682;
+  --sol-violet:  #6c71c4;
+  --sol-blue:    #268bd2;
+  --sol-cyan:    #2aa198;
+  --sol-green:   #859900;
+}
+
+.reveal-viewport {
+  background: var(--sol-base3);
+}
+
+.reveal {
+  color: var(--sol-base00);
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  color: var(--sol-base01);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.reveal h1 {
+  color: var(--sol-blue);
+}
+
+.reveal a {
+  color: var(--sol-blue);
+}
+
+.reveal a:hover {
+  color: var(--sol-cyan);
+}
+
+.reveal strong,
+.reveal b {
+  color: var(--sol-base01);
+}
+
+.reveal em,
+.reveal i {
+  color: var(--sol-base00);
+}
+
+.reveal code {
+  font-family: "Menlo", "Consolas", "DejaVu Sans Mono", monospace;
+  background: var(--sol-base2);
+  color: var(--sol-base01);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+.reveal pre {
+  background: var(--sol-base2);
+  border: 1px solid var(--sol-base1);
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.reveal pre code {
+  background: transparent;
+  padding: 0.8em;
+}
+
+.reveal blockquote {
+  background: var(--sol-base2);
+  border-left: 4px solid var(--sol-cyan);
+  color: var(--sol-base01);
+  box-shadow: none;
+}
+
+.reveal .controls button {
+  color: var(--sol-blue);
+}
+
+.reveal .progress span {
+  background: var(--sol-blue);
+}
+
+.reveal .slide-number {
+  color: var(--sol-base1);
+  background: transparent;
+}
+
+::selection {
+  background: var(--sol-base2);
+  color: var(--sol-base01);
+}
+
+.reveal ul,
+.reveal ol {
+  color: var(--sol-base00);
+}
+
+.reveal table th {
+  color: var(--sol-base01);
+}
